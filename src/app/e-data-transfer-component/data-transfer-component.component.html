@@ -1,0 +1,14 @@
+<label>
+  <input type="text" [(ngModel)]="nameUser">
+</label>
+<br><br>
+
+<label>
+  <input type="text" [(ngModel)]="sNameUser">
+</label>
+<br><br>
+
+<button (click)="add()">
+  button
+</button>
+<app-a-children *ngFor="let a of  items" [varChildren]="a"></app-a-children>

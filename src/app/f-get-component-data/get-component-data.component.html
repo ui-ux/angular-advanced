@@ -1,0 +1,10 @@
+<app-f-form (onAddUser)="updateUserList($event)"></app-f-form>
+<hr>
+<app-f-children *ngFor="let user of  items" [varChildren]="user">
+<!--  <span>{{user.name}} {{user.sName}}
+    ___new content___
+  </span>-->
+  <p #nestedBlock>
+    nested block
+  </p>
+</app-f-children>

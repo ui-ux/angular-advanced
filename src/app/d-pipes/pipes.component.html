@@ -1,0 +1,87 @@
+<p>
+  pipes works!
+</p>
+<div>
+  {{lower | lowercase}}
+</div>
+<div>
+  {{aperr | uppercase}}
+</div>
+<div>
+  {{aperr | titlecase}}
+</div>
+<br>
+<div>
+  pi = {{ pi | number }}
+</div>
+<div>
+  pi = {{ pi | number:'1.3-7' }}
+</div>
+<div>
+  pi = {{ pi | number:'4.3-7' }}
+</div>
+<br>
+<div>
+  {{aperr}}
+</div>
+<div>
+  slice:3 = {{aperr | slice:3}}
+</div>
+<div>
+  slice:3:5 = {{aperr | slice:3:7}}
+</div>
+<div>
+  json = {{arr | json}}
+</div>
+<br><br>
+<div>
+  {{0.25 | percent}}
+</div>
+<div>
+  {{0.25 | currency}}
+</div>
+<div>
+  {{0.25 | currency : 'GBP'}}
+</div>
+<div>
+  {{0.25 | currency : 'GBP' : 'code'}}
+</div>
+<div>
+  {{0.25 | currency: 'UA': true}}
+</div>
+
+<br><br>
+<div>
+  {{date}}
+</div>
+<div>
+  {{date | date}}
+</div>
+<div>
+  short = {{date | date: 'short'}}
+</div>
+<div>
+  fullDate = {{date | date: 'fullDate'}}
+</div>
+<div>
+  medium = {{date | date: 'medium'}}
+</div>
+<div>
+  shortDate =  {{date | date: 'shortDate'}}
+</div>
+<div>
+  shortTime = {{date | date: 'shortTime'}}
+</div>
+<div>
+  {{dateString | uppercase}}
+</div>
+
+<!--https://angular.io/api/common/DatePipe-->
+
+<p>
+  basePipe {{ testNumber | basePipe: 3 }}
+</p>
+
+<p>
+  basePipe {{ testNumber | basePipe: 2 : 'new string '}}
+</p>

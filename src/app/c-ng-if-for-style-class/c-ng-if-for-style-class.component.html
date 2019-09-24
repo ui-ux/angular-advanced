@@ -1,0 +1,131 @@
+<div>
+  <button (click)="toggleHide()">toggleHide</button>
+</div>
+<div *ngIf="isHideToggle">
+  true this.isHide;
+</div>
+<div *ngIf="!isHideToggle">
+  false this.isHide;
+</div>
+
+<!--or-->
+
+<br><br>
+<div>
+  <button (click)="toggleLinkHide()">toggleLinkHide</button>
+</div>
+<div *ngIf="isLinkHide; else linkHide">
+  true this.isLinkHide;
+</div>
+<ng-template #linkHide>
+  <div >
+    falsethis.isLinkHide;
+  </div>
+</ng-template>
+
+<!--or-->
+
+<br><br>
+<div>
+  <button (click)="toggleThen()">toggleThen</button>
+</div>
+<div *ngIf="isHideThen; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>Content to render when condition is true.</ng-template>
+<ng-template #elseBlock>Content to render when condition is false.</ng-template>
+
+<!--show-->
+
+<br><br>
+<button (click)="show = !show"> {{show ? 'hide' : 'show'}} </button>
+  show = {{show}}
+<div *ngIf="show; else elseBlockShow">Text to show</div>
+<ng-template #elseBlockShow>
+  <div>
+    Alternate text while primary text is hidden
+  </div>
+</ng-template>
+
+<!--------------------------------------------------------------------->
+
+
+<br><br>
+<div>
+  <label>
+    <input type="text" [(ngModel)]="newList">
+  </label>
+  <br>  <br>
+  <button (click)="pushArr()">button</button>
+</div>
+<div *ngFor="let a of abc; let i = index">
+  {{a + ' index ' + i }}
+</div>
+
+<br><br>
+<div *ngFor="let item of items">
+  <span> {{item.name}} </span> - <span> {{item.id}} </span>
+</div>
+
+
+<br><br>
+<div [style.color]="'blue'">
+  ngSlyle
+</div>
+
+<div [style.color]="redClass">
+  ngSlyle - ts
+</div>
+
+<div [style.color]="false ? 'blue': 'green'">
+  [style.color]="true ? 'blue': 'green'">
+</div>
+
+<div [ngStyle]="titleStyle">
+  [ngStyle]="titleStyle">
+</div>
+<div [ngStyle]="{'background-color':'yellow'}">
+  'background-color':'blue'
+</div>
+<div [ngStyle]="{backgroundColor:'blue'}">
+  'background-color':'blue'
+</div>
+
+<div *ngFor="let a of abc; let i = index"
+     [ngStyle]="{color: (i + 1)%2 === 0 ? 'tomato' : 'blue' }"
+>
+  {{a}}
+</div>
+
+<br><br>
+<div [class.tomato]="isDisabled">
+  [class.tomato]="isDisabled"
+</div>
+<div [ngClass] ="messageClass">
+  [ngClass] ="messageClass"
+</div>
+<div *ngFor="let car of cars">
+  <div [ngClass] ="{'blue':setCar(car)}">
+    [ngClass] ="messageClass"
+  </div>
+</div>
+<br>
+<p>ngSwitch</p>
+<div [ngSwitch]="count">
+  <ng-template ngSwitchCase="1">{{count * 10}}</ng-template>
+  <ng-template ngSwitchCase="2">{{count * 100}}</ng-template>
+  <ng-template ngSwitchDefault>{{count * 1000}}</ng-template>
+</div>
+
+<div *ngFor="let a of abc; let i = index" (click)="onClickSwitch(a)">
+  {{a}}
+</div>
+
+<div [ngSwitch]="current" style="background: cornflowerblue">
+  <ng-template ngSwitchCase="uno"> uno </ng-template>
+  <ng-template ngSwitchCase="dos"> dos </ng-template>
+  <ng-template ngSwitchCase="tress"> tress </ng-template>
+
+
+  <ng-template ngSwitchDefault>number</ng-template>
+</div>
+
+

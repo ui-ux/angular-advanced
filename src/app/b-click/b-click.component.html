@@ -1,0 +1,44 @@
+<p>
+ {{ addString }}
+</p>
+<p>
+  {{addCount}}
+</p>
+<div>
+  <button (click)="addVar()">click</button>
+</div>
+<div>
+  <label>
+    <input type="text" (input)="onInput($event)">
+  </label>
+  <div>
+    {{ addValueInput }}
+  </div>
+</div>
+<br>
+<div>
+  <label>
+    <input type="text" #myInput (input)="onInputLink(myInput.value)">
+  </label>
+  <div>
+    {{ addValueInputLink }}
+  </div>
+</div>
+<br>
+<div>
+  <label>
+    <input type="text" (keyup.enter)="onInputEnter($event)">
+  </label>
+  <div>
+    {{ addValueInputEnter }}
+  </div>
+</div>
+<br>
+<div>
+  <label>
+    <input type="text" [(ngModel)]="twoWayBinding">
+  </label>
+  <div>
+    {{ twoWayBinding }}
+  </div>
+</div>
