@@ -1,0 +1,18 @@
+<div>
+  <app-service-car-add (onCarAdd)="addCarToList($event)"></app-service-car-add>
+  <div>
+    <app-service-car *ngFor="let car of cars" [car]="car"></app-service-car>
+  </div>
+</div>
+<br> <br>
+
+<div class="panel">
+  <div><input [(ngModel)]="name" placeholder = "Модель" />
+    <button (click)="addItem(name)">Добавить</button>
+  </div>
+  <table>
+    <tr *ngFor="let item of items">
+      <td>{{item}}</td>
+    </tr>
+  </table>
+</div>

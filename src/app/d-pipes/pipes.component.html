@@ -85,3 +85,31 @@
 <p>
   basePipe {{ testNumber | basePipe: 2 : 'new string '}}
 </p>
+<br>
+<div>
+  <label>
+    <input type="text" [(ngModel)]="searchPipe">
+  </label>
+</div>
+<br>
+<div>
+  <p>
+    asyncTitle
+  </p>
+
+  {{ asyncTitle | async}}
+<!--  {{ title }}-->
+</div>
+<div>
+<!--  <ul>
+    <li *ngFor="let c of cars | filterPipe: searchPipe">
+      {{ c.name }} -  <span> {{ c.color }}</span>
+    </li>
+  </ul>-->
+
+  <ul>
+    <li *ngFor="let c of cars | filterPipe: searchPipe: 'name'">
+      {{ c.name }} -  <span> {{ c.color }}</span>
+    </li>
+  </ul>
+</div>
