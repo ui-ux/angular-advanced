@@ -24,6 +24,8 @@ import {DataService} from "./003_services/data.service";
 import {LogService} from "./003_services/log.service";
 import {IFormsComponent} from './i-forms/i-forms.component';
 import {HttpClientModule} from "@angular/common/http";
+import {JServerComponent} from './j-server/j-server.component';
+import {CarsService} from "./j-server/cars.service";
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import {HttpClientModule} from "@angular/common/http";
     ServiceCarComponent,
     ServiceCarAddComponent,
     IFormsComponent,
+    JServerComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ import {HttpClientModule} from "@angular/common/http";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ DataService, LogService ],
+  providers: [ DataService, LogService, CarsService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -1,0 +1,16 @@
+<p>
+  <input type="text" [(ngModel)]="carName">
+</p>
+<div>
+  <button (click)="loadCars()">Загрузить машины</button>
+  <br>
+  <button (click)="addCar()">Добавить машину</button>
+  <hr>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let car of cars | async">
+      <span [ngStyle]="{background: car.color}">{{car.id}}</span> {{car.name}} ({{car.color}})
+      <button (click)="setNewColor(car)">Изменить цвет</button>
+      <button (click)="deleteCar(car)">Удалить машину</button>
+    </li>
+  </ul>
+</div>
